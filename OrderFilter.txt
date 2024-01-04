@@ -1,0 +1,42 @@
+input OrderFilter {
+id: [String!]
+number: [Int!]
+status: [OrderStatus!]
+createdAt: DateRange
+updatedAt: DateRange
+orderDate: DateRange
+preferredShippingDate: DateRange
+estimatedDeliveryDate: DateRange
+cancelDate: DateRange
+# Exactly one input field should be provided
+purchaseOrderNumber: StringMatch
+# Exactly one input field should be provided
+userIp: StringMatch
+accountId: [Int!]
+affiliateId: [Int!]
+countryId: [Int!]
+countryStateId: [Int!]
+currencyId: [Int!]
+deliveryWindowId: [Int!]
+languageId: [Int!]
+marketId: [Int!]
+paymentMethodId: [Int!]
+pricelistId: [Int!]
+customerId: [Int!]
+buyerId: [Int!]
+salesRepresentativeId: [Int!]
+storeId: [Int!]
+storeType: StoreType
+search: String
+notNull: [String!]
+negate: [String!]
+isLocked: Boolean
+isOnHold: Boolean
+isWaitingForPayment: Boolean
+isInternal: Boolean
+# Exactly one input field should be provided
+otherComment: StringMatch
+allocationRuleId: [Int!]
+externalId: [String!]
+purchaserId: [Int!]
+}

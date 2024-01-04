@@ -1,0 +1,1304 @@
+type Mutation {
+# Generate an access token with given user parameters and permissions, and valid for given time (30 days by default)
+#
+# Required permission: admin
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createAccessToken(input: AccessTokenCreateInput!): AccessTokenCreatePayload!
+# Update access token - extend validity or modify permissions
+#
+# Required permission: admin
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# accessToken: (self-explanatory)
+# input: (self-explanatory)
+updateAccessToken(accessToken: AccessTokenInput!, input: AccessTokenUpdateInput!): AccessTokenUpdatePayload!
+# Disable given token by changing expiration date
+#
+# Required permission: admin
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# accessToken: (self-explanatory)
+revokeAccessToken(accessToken: AccessTokenInput!): AccessTokenRevokePayload!
+# Finds deprecated permissions in all access tokens and replaces them with currently used counterparts.
+# It runs in a "dry run" mode by default, to see and check what exactly is going to be updated.
+#
+# Required permission: admin
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# dryRun: (self-explanatory)
+migrateDeprecatedPermissions(dryRun: Boolean! = true): DeprecatedPermissionMigratePayload!
+# Assigns dynamic and mapped attributes to an object.
+#
+# Required permission: Attribute:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+assignAttributes(input: AttributesAssignGenericInput!): AttributesAssignPayload!
+# Unassigns dynamic and mapped attributes from an object.
+#
+# Required permission: Attribute:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+unassignAttributes(input: AttributesUnassignGenericInput!): AttributesUnassignPayload!
+# Create a mapped attribute
+#
+# Required permission: Attribute:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createAttribute(input: AttributeCreateInput!): AttributeCreatePayload!
+# Update a mapped attribute
+#
+# Required permission: Attribute:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# input: (self-explanatory)
+updateAttribute(id: Int!, input: AttributeUpdateInput!): AttributeUpdatePayload!
+# Create a brand
+#
+# Required permission: Brand:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createBrand(input: BrandCreateInput!): BrandCreatePayload!
+# Update a brand
+#
+# Required permission: Brand:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+# input: (self-explanatory)
+updateBrand(id: Int, externalId: String, input: BrandUpdateInput!): BrandUpdatePayload!
+# Creates a new collection
+#
+# Required permission: Collection:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createCollection(input: CollectionCreateInput!): CollectionCreatePayload!
+# Update a collection
+#
+# Required permission: Collection:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+# input: (self-explanatory)
+updateCollection(id: Int, externalId: String, input: CollectionUpdateInput!): CollectionUpdatePayload!
+# Create a new display
+#
+# Required permission: Display:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createDisplay(input: DisplayCreateInput!): DisplayCreatePayload!
+# Update an existing display
+#
+# Required permission: Display:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# input: (self-explanatory)
+updateDisplay(id: Int!, input: DisplayUpdateInput!): DisplayUpdatePayload!
+# Create a media upload policy
+#
+# Required permission: ProductMedia:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createMediaUpload(input: MediaUploadCreateInput!): MediaUploadCreatePayload!
+# Complete media upload by assigning media to:
+#
+# - Product (required permission: 'Product:write')
+#
+# - ProductVariant (required permission: 'ProductVariant:write')
+#
+#
+# Required permission: ProductMedia:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+completeMediaUpload(input: MediaUploadCompleteInput!): MediaUploadCompletePayload!
+# Update product media
+#
+# Required permission: ProductMedia:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# input: (self-explanatory)
+updateProductMedia(id: Int!, input: ProductMediaUpdateInput!): ProductMediaUpdatePayload!
+# Delete a product media
+#
+# Required permission: ProductMedia:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+deleteProductMedia(id: Int!): ProductMediaDeletePayload!
+# Create a new folder
+#
+# Required permission: Folder:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createFolder(input: FolderCreateInput): FolderCreatePayload!
+# Update an existing folder
+#
+# Required permission: Folder:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+# input: (self-explanatory)
+updateFolder(id: Int, externalId: String, input: FolderUpdateInput): FolderUpdatePayload!
+# Create a Price Alteration
+#
+# Required permission: Price:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createPriceAlteration(input: PriceAlterationCreateInput!): PriceAlterationPayload!
+# Update a Price Alteration
+#
+# Required permission: Price:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# input: (self-explanatory)
+updatePriceAlteration(id: Int!, input: PriceAlterationUpdateInput!): PriceAlterationPayload!
+# Create a product
+#
+# Required permission: Product:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createProduct(input: ProductCreateInput!): ProductCreatePayload!
+# Update a product
+#
+# Required permission: Product:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+# input: (self-explanatory)
+updateProduct(id: Int, externalId: String, input: ProductUpdateInput!): ProductUpdatePayload!
+# Create a product variant
+#
+# Required permission: ProductVariant:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createProductVariant(input: ProductVariantCreateInput!): ProductVariantCreatePayload!
+# Update a product variant
+#
+# Required permission: ProductVariant:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+# input: (self-explanatory)
+updateProductVariant(id: Int, externalId: String, input: ProductVariantUpdateInput!): ProductVariantUpdatePayload!
+# Add, update or delete a translations for given object and language
+#
+# Required permission: Translation:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+setTranslations(input: TranslationsSetInput!): TranslationsSetPayload!
+# Set prices on products for given pricelist.
+# Individual variant prices can also be set from the product price level.
+# You can set up to 100 product prices in one call.
+#
+# Required permission: Price:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+setPrices(input: ProductPricesSetInput!): PricesSetPayload!
+# Set altered prices on products for given pricelist.
+# Same rules as for setPrices
+#
+# Required permission: Price:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+setAlteredPrices(input: ProductAlteredPricesSetInput!): AlteredPricesSetPayload!
+# Relate a display to another display
+#
+# Required permission: Display:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+addDisplayRelation(input: DisplayRelationAddInput!): DisplayRelationAddPayload!
+# Remove a display relation
+#
+# Required permission: Display:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+removeDisplayRelation(input: DisplayRelationRemoveInput!): DisplayRelationRemovePayload!
+# Create a pricelist
+#
+# Required permission: Pricelist:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createPricelist(input: PricelistCreateInput!): PricelistCreatePayload!
+# Update a pricelist
+#
+# Required permission: Pricelist:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+# input: (self-explanatory)
+updatePricelist(id: Int, externalId: String, input: PricelistUpdateInput!): PricelistUpdatePayload!
+# Delete a pricelist
+#
+# Required permission: Pricelist:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+deletePricelist(id: Int, externalId: String): PricelistDeletePayload!
+# Create a product variant size
+#
+# Required permission: ProductVariant:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createProductSize(input: ProductSizeCreateInput!): ProductSizeCreatePayload!
+# Update a product variant size
+#
+# Required permission: ProductVariant:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# input: (self-explanatory)
+updateProductSize(id: Int!, input: ProductSizeUpdateInput!): ProductSizeUpdatePayload!
+# Create a delivery window
+#
+# Required permission: DeliveryWindow:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createDeliveryWindow(input: DeliveryWindowCreateInput!): DeliveryWindowCreatePayload!
+# Update a delivery window
+#
+# Required permission: DeliveryWindow:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+# input: (self-explanatory)
+updateDeliveryWindow(id: Int, externalId: String, input: DeliveryWindowUpdateInput!): DeliveryWindowUpdatePayload!
+# Sets how variants should be available in given delivery window. If provided variant already is assigned to that delivery
+# window then it will be updated with provided parameters.
+#
+# Required permission: DeliveryWindow:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+setDeliveryWindowVariants(input: DeliveryWindowVariantsSetInput!): DeliveryWindowVariantsSetPayload!
+# Unsets variants from delivery window
+#
+# Required permission: DeliveryWindow:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+unsetDeliveryWindowVariants(input: DeliveryWindowVariantsUnsetInput!): DeliveryWindowVariantsUnsetPayload!
+# Create a shipping
+#
+# Required permission: ShippingOption:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createShippingOption(input: ShippingOptionCreateInput!): ShippingOptionCreatePayload!
+# Update a shipping option
+#
+# Required permission: ShippingOption:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# input: (self-explanatory)
+updateShippingOption(id: Int!, input: ShippingOptionUpdateInput!): ShippingOptionUpdatePayload!
+# Delete a shipping option
+#
+# Required permission: ShippingOption:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+deleteShippingOption(id: Int!): ShippingOptionDeletePayload!
+# Change stock for many items
+#
+# Required permission: StockChange:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+changeStock(input: StockChangeInput!): StockChangePayload!
+# Set stock levels: unlike the `changeStock` mutation, this one accepts absolute stock values,
+# either FTA (free to allocate), or physical. If FTA values are provided, they should not include
+# possible `stockOffset` from `ProductVariant`, nor `threshold` from `Warehouse`, just the physical
+# stock minus the allocated quantity.
+#
+# Required permission: StockChange:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+setStock(input: StockSetInput!): StockSetPayload!
+# Create a subscription
+#
+# Required permission: Subscription:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createSubscription(input: SubscriptionCreateInput!): SubscriptionUpdatePayload!
+# Update a subscription
+#
+# Required permission: Subscription:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# input: (self-explanatory)
+updateSubscription(id: Int!, input: SubscriptionUpdateInput!): SubscriptionUpdatePayload!
+# Create a subscription plan
+#
+# Required permission: SubscriptionPlan:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createSubscriptionPlan(input: SubscriptionPlanCreateInput!): SubscriptionPlanCreatePayload!
+# Update a subscription plan
+#
+# Required permission: SubscriptionPlan:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# input: (self-explanatory)
+updateSubscriptionPlan(id: Int!, input: SubscriptionPlanUpdateInput!): SubscriptionPlanUpdatePayload!
+# Update a subscription contract
+#
+# Required permission: Subscription:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# input: (self-explanatory)
+updateSubscriptionContract(id: Int!, input: SubscriptionContractUpdateInput!): SubscriptionContractUpdatePayload!
+# Set variants to a subscription plan.
+# You can set up to 100 variants in one call.
+#
+# Required permission: SubscriptionPlan:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+setSubscriptionPlanVariants(input: SubscriptionPlanVariantsSetInput!): SubscriptionPlanVariantsSetPayload!
+# Unset variants from a subscription plan.
+# You can unset up to 100 variants in one call.
+#
+# Required permission: SubscriptionPlan:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+unsetSubscriptionPlanVariants(input: SubscriptionPlanVariantsUnsetInput!): SubscriptionPlanVariantsUnsetPayload!
+# Create a size chart
+#
+# Required permission: SizeChart:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createSizeChart(input: SizeChartCreateInput!): SizeChartCreatePayload!
+# Update a size chart. Covers adding, removing and rearranging sizes. For renaming sizes use `updateSizeChartLabels`
+#
+# Required permission: SizeChart:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+# input: (self-explanatory)
+updateSizeChart(id: Int, externalId: String, input: SizeChartUpdateInput!): SizeChartUpdatePayload!
+# Update size labels
+#
+# Required permission: SizeChart:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+# input: (self-explanatory)
+updateSizeChartLabels(id: Int, externalId: String, input: SizeChartLabelsUpdateInput!): SizeChartUpdatePayload!
+# Merge two size charts into one
+#
+# Required permission: SizeChart:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+mergeSizeCharts(input: SizeChartMergeInput!): SizeChartUpdatePayload!
+# Delete a size chart
+#
+# Required permission: SizeChart:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+deleteSizeChart(id: Int, externalId: String): SizeChartDeletePayload!
+# Create a bundle
+#
+# Required permission: Bundle:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createBundle(input: BundleCreateInput!): BundleCreatePayload!
+# Update a bundle
+#
+# Required permission: Bundle:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# input: (self-explanatory)
+updateBundle(id: Int!, input: BundleUpdateInput!): BundleUpdatePayload!
+# Create a measurement chart
+#
+# Required permission: MeasurementChart:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createMeasurementChart(input: MeasurementChartCreateInput!): MeasurementChartCreatePayload!
+# Update a measurement chart
+#
+# Required permission: MeasurementChart:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# input: (self-explanatory)
+updateMeasurementChart(id: Int!, input: MeasurementChartUpdateInput!): MeasurementChartUpdatePayload!
+# Delete a measurement chart
+#
+# Required permission: MeasurementChart:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+deleteMeasurementChart(id: Int!): MeasurementChartDeletePayload!
+# Create a customer
+#
+# Required permission: Customer:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createCustomer(input: CustomerCreateInput!): CustomerCreatePayload!
+# Update a customer
+#
+# Required permission: Customer:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+# input: (self-explanatory)
+updateCustomer(id: Int, externalId: String, input: CustomerUpdateInput!): CustomerUpdatePayload!
+# Delete a customer
+#
+# Required permission: Customer:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+deleteCustomer(id: Int, externalId: String): CustomerDeletePayload!
+# Create an account
+#
+# Required permission: Account:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createAccount(input: AccountCreateInput!): AccountCreatePayload!
+# Update an account
+#
+# Required permission: Account:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+# input: (self-explanatory)
+updateAccount(id: Int, externalId: String, input: AccountUpdateInput!): AccountUpdatePayload!
+# Delete an account
+#
+# Required permission: Account:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+deleteAccount(id: Int, externalId: String): AccountDeletePayload!
+# Create an address book entry for an account
+#
+# Required permission: Account:write
+#
+# Arguments
+# input: (self-explanatory)
+createAddressBookEntry(input: AddressBookEntryCreateInput!): AddressBookEntryCreatePayload!
+# Update an address book entry for an account
+#
+# Required permission: Account:write
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+# input: (self-explanatory)
+updateAddressBookEntry(id: Int, externalId: String, input: AddressBookEntryUpdateInput!): AddressBookEntryUpdatePayload!
+# Delete an address book from an account
+#
+# Required permission: Account:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+deleteAddressBookEntry(id: Int, externalId: String): AddressBookEntryDeletePayload!
+# Create a buyer for an account
+#
+# Required permission: Buyer:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createBuyer(input: BuyerCreateInput!): BuyerCreatePayload!
+# Update a buyer for an account
+#
+# Required permission: Buyer:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+# input: (self-explanatory)
+updateBuyer(id: Int, externalId: String, input: BuyerUpdateInput!): BuyerUpdatePayload!
+# Delete a buyer from an account
+#
+# Required permission: Buyer:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+deleteBuyer(id: Int, externalId: String): BuyerDeletePayload!
+# Create a campaign
+#
+# Required permission: Campaign:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createCampaign(input: CampaignCreateInput!): CampaignCreatePayload!
+# Update a campaign
+#
+# Required permission: Campaign:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# input: (self-explanatory)
+updateCampaign(id: Int!, input: CampaignUpdateInput!): CampaignUpdatePayload!
+# Delete a campaign
+#
+# Required permission: Campaign:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+deleteCampaign(id: Int!): CampaignDeletePayload!
+# Set campaign variants
+#
+# Required permission: Campaign:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+setCampaignVariants(input: CampaignVariantsSetInput!): CampaignVariantsSetPayload!
+# Unset campaign variants
+#
+# Required permission: Campaign:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+unsetCampaignVariants(input: CampaignVariantsUnsetInput!): CampaignVariantsUnsetPayload!
+# Create a market
+#
+# Required permission: Market:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createMarket(input: MarketCreateInput!): MarketCreatePayload!
+# Update a market
+#
+# Required permission: Market:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+# input: (self-explanatory)
+updateMarket(id: Int, externalId: String, input: MarketUpdateInput!): MarketUpdatePayload!
+# Delete a market
+#
+# Required permission: Market:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+deleteMarket(id: Int, externalId: String): MarketDeletePayload!
+# Assign displays to a market
+#
+# Required permission: Display:write
+#
+# Arguments
+# input: (self-explanatory)
+setMarketDisplays(input: MarketDisplaysSetInput!): MarketDisplaysSetPayload!
+# Unassign displays from a market
+#
+# Required permission: Display:write
+#
+# Arguments
+# input: (self-explanatory)
+unsetMarketDisplays(input: MarketDisplaysUnsetInput!): MarketDisplaysUnsetPayload!
+# Create a category
+#
+# Required permission: Category:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createCategory(input: CategoryCreateInput!): CategoryCreatePayload!
+# Update a category
+#
+# Required permission: Category:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# input: (self-explanatory)
+updateCategory(id: Int!, input: CategoryUpdateInput!): CategoryUpdatePayload!
+# Delete a category
+#
+# Required permission: Category:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# input: (self-explanatory)
+deleteCategory(id: Int!, input: CategoryDeleteInput! = {deleteChildrenStrategy: RESTRICT_IF_PRESENT}): CategoryDeletePayload!
+# Set category displays
+#
+# Required permission: Category:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+setCategoryDisplays(input: CategoryDisplaysSetInput!): CategoryDisplaysSetPayload!
+# Unset category displays
+#
+# Required permission: Category:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+unsetCategoryDisplays(input: CategoryDisplaysUnsetInput!): CategoryDisplaysUnsetPayload!
+# Sort displays of a category
+#
+# Required permission: Category:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+sortCategoryDisplays(input: CategoryDisplaysSortInput!): CategoryDisplaysSortPayload!
+# Create a voucher
+#
+# Required permission: Voucher:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createVoucher(input: VoucherCreateInput!): VoucherCreatePayload!
+# Update a voucher
+#
+# Required permission: Voucher:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+# input: (self-explanatory)
+updateVoucher(id: Int, externalId: String, input: VoucherUpdateInput!): VoucherUpdatePayload!
+# Delete a voucher
+#
+# Required permission: Voucher:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+deleteVoucher(id: Int, externalId: String): VoucherDeletePayload!
+# Add an action to a voucher
+#
+# Required permission: Voucher:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+addVoucherAction(input: VoucherActionCreateInput!): VoucherActionCreatePayload!
+# Update an action of voucher
+#
+# Required permission: Voucher:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# input: (self-explanatory)
+updateVoucherAction(id: Int!, input: VoucherActionUpdateInput!): VoucherActionUpdatePayload!
+# Delete an action from voucher
+#
+# Required permission: Voucher:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+deleteVoucherAction(id: Int!): VoucherActionDeletePayload!
+# Update a DTC order that isn't locked (unless the user has 'Order.isLocked:write' permission)
+#
+# Required permission: Order:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# order: (self-explanatory)
+# input: (self-explanatory)
+updateDirectToConsumerOrder(order: OrderInput!, input: DirectToConsumerOrderUpdateInput!): DirectToConsumerOrderUpdatePayload!
+# Update a wholesale order that isn't locked (unless the user has 'Order.isLocked:write' permission)
+#
+# Required permission: Order:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# order: (self-explanatory)
+# input: (self-explanatory)
+updateWholesaleOrder(order: OrderInput!, input: WholesaleOrderUpdateInput!): WholesaleOrderUpdatePayload!
+# Cancel a DTC order
+#
+# Required permission: Order:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# order: (self-explanatory)
+# input: (self-explanatory)
+cancelDirectToConsumerOrder(order: OrderInput!, input: DirectToConsumerOrderCancelInput!): DirectToConsumerOrderCancelPayload!
+# Cancel a Wholesale order
+#
+# Required permission: Order:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# order: (self-explanatory)
+# input: (self-explanatory)
+cancelWholesaleOrder(order: OrderInput!, input: WholesaleOrderCancelInput!): WholesaleOrderCancelPayload!
+# Confirm an order that isn't locked (unless the user has 'Order.isLocked:write' permission) or on hold
+#
+# Required permission: Order:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+confirmOrder(input: OrderConfirmInput!): OrderConfirmPayload!
+# Add a note to an order that isn't locked (unless the user has 'Order.isLocked:write' permission)
+#
+# Required permission: OrderHistory:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+addOrderNote(input: OrderNoteAddInput): OrderNoteAddPayload!
+# Add an external link attachment to a wholesale order
+#
+# Required permission: OrderHistory:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+addOrderLinkAttachment(input: OrderLinkAttachmentInput): OrderLinkAttachmentAddPayload!
+# Lock/unlock an order.
+# If a user does not have permission to lock/unlock the order and tries to modify a locked order, it will be forbidden.
+# This includes creating a shipment and order allocation.
+#
+# Required permission: Order.isLocked:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+setOrdersLock(input: OrdersLockInput!): OrdersLockPayload!
+# Allocate stock for an order that isn't locked (unless the user has 'Order.isLocked:write' permission)
+#
+# Required permission: Order:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+allocateOrder(input: OrderAllocateInput!): OrderAllocatePayload!
+# Capture an order
+#
+# Required permission: Order:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# order: (self-explanatory)
+captureOrder(order: OrderInput!): OrderCapturePayload!
+# Create a shipment for an order that isn't locked (unless the user has 'Order.isLocked:write' permission) or on hold
+#
+# Required permission: Shipment:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createShipment(input: ShipmentCreateInput!): ShipmentCreatePayload!
+# Update a shipment
+#
+# Required permission: Shipment:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+# input: (self-explanatory)
+updateShipment(id: Int, externalId: String, input: ShipmentUpdateInput!): ShipmentUpdatePayload!
+# Complete a shipment
+#
+# Required permission: Shipment:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+# input: (self-explanatory)
+completeShipment(id: Int, externalId: String, input: ShipmentCompleteInput): ShipmentCompletePayload
+# Delete a shipment from an order that isn't locked (unless the user has 'Order.isLocked:write' permission)
+#
+# Required permission: Shipment:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+deleteShipment(id: Int, externalId: String): ShipmentDeletePayload!
+# Capture a shipment.
+# Even if the mutation returns empty userErrors, a capture itself can be failed because a failed attempt is also saved
+# into a payment history entry and the mutation shows it in paymentHistoryEntry.
+# The best way to check whether the capture succeeded is to check shipment.isCaptured.
+#
+# If the order was captured before and there is some amount not assigned to any shipment, it will be set to
+# the shipment. If the total shipment amount is assigned that way, no real capture will be made. In this case,
+# paymentHistoryEntry cannot be created and it will be null, but the shipment field will be non-empty.
+#
+# Required permission: Payment.capture:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+captureShipment(id: Int, externalId: String): ShipmentCapturePayload!
+# Release remaining order authorization after all shipments are captured in order to release customer's funds that will
+# not be captured. Amount that will be released is authorization amount - total captured amount across all shipments.
+#
+# Required permission: Payment.cancel:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# order: (self-explanatory)
+releaseRemainingOrderAuthorization(order: OrderInput): ReleaseRemainingOrderAuthorizationPayload!
+# Create a return
+#
+# Required permission: Return:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createReturn(input: ReturnCreateInput!): ReturnCreatePayload!
+# Complete a return
+#
+# Required permission: Return:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+# input: (self-explanatory)
+completeReturn(id: Int, externalId: String, input: ReturnCompleteInput! = {sendEmail: false}): ReturnCompletePayload!
+# Uncomplete a return
+#
+# Required permission: Return:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+uncompleteReturn(id: Int, externalId: String): ReturnUncompletePayload!
+# Delete a return
+#
+# Required permission: Return:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+deleteReturn(id: Int, externalId: String): ReturnDeletePayload!
+# Create a warehouse
+#
+# Required permission: Warehouse:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createWarehouse(input: WarehouseCreateInput!): WarehouseCreatePayload!
+# Update a warehouse
+#
+# Required permission: Warehouse:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+# input: (self-explanatory)
+updateWarehouse(id: Int!, externalId: String, input: WarehouseUpdateInput!): WarehouseUpdatePayload!
+# Add payment information to an invoice
+#
+# Required permission: Invoice:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+registerInvoicePayment(input: RegisterInvoicePaymentInput!): InvoicePaymentRegisterPayload!
+# Only to mark as fully paid
+#
+# Required permission: Invoice:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+markInvoiceAsPaid(input: MarkInvoiceAsPaidInput!): MarkInvoiceAsPaidPayload!
+# Add item to the wishlist
+#
+# Required permission: Wishlist:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+addWishlistItem(input: WishlistItemAddInput!): WishlistItemAddPayload!
+# Remove item from the wishlist
+#
+# Required permission: Wishlist:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+removeWishlistItem(input: WishlistItemRemoveInput!): WishlistItemRemovePayload!
+# Set ID conversion rules
+#
+# Required permission: IdConversion:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+setIdConversions(input: [IdConversionSetInput!]!): IdConversionsSetPayload!
+# Unset ID conversion rules
+#
+# Required permission: IdConversion:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+unsetIdConversions(input: [IdConversionUnsetInput!]!): IdConversionsUnsetPayload!
+# Add subvouchers to a voucher, a lightweight way to have
+# multiple individually tracked codes for a single voucher configuration
+#
+# Required permission: Voucher:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+addSubvouchers(input: SubvouchersCreateInput!): SubvouchersPayload!
+# Update a single subvoucher
+#
+# Required permission: Voucher:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+# input: (self-explanatory)
+updateSubvoucher(id: Int!, input: SubvoucherUpdateInput!): SubvoucherPayload!
+# Completely remove a subvoucher
+#
+# Required permission: Voucher:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# id: (self-explanatory)
+removeSubvoucher(id: Int!): SubvoucherRemovePayload!
+# Add a size localization, which will define, how sizes in specified size charts are presented in given stores and
+# countries
+#
+# Required permission: SizeChart:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+createSizeLocalization(input: SizeLocalizationCreateInput!): SizeLocalizationCreatePayload!
+# Update a size localization
+#
+# Required permission: SizeChart:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# sizeLocalization: (self-explanatory)
+# input: (self-explanatory)
+updateSizeLocalization(
+sizeLocalization: SizeLocalizationInput!,
+input: SizeLocalizationUpdateInput!
+): SizeLocalizationUpdatePayload!
+# Set localized names for sizes in a given size localization
+#
+# Required permission: SizeChart:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# sizeLocalization: (self-explanatory)
+# input: (self-explanatory)
+setLocalizedSizes(sizeLocalization: SizeLocalizationInput!, input: [LocalizedSizesSetInput!]!): LocalizedSizesSetPayload!
+# Subscribe to receive events of specified object and change types
+#
+# Required permission: Event:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+setEventListeners(input: [EventListenerSetInput!]!): EventListenerSetPayload!
+# Unsubscribe from given object and change types.
+# It will result in deleting all queued events of these types.
+#
+# Required permission: Event:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+unsetEventListeners(input: [EventListenerUnsetInput!]!): EventListenerUnsetPayload!
+# Confirm the given events.
+# It means they were processed on your side and they are no longer needed.
+# It is an essential mechanism to clean the events queue.
+# Limit is 200 events per call.
+#
+# Required permission: Event:write
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+confirmEvents(input: EventsConfirmInput!): EventsConfirmPayload!
+# Required permission: MediaBatch:write
+#
+# Arguments
+# input: (self-explanatory)
+createMediaBatch(input: MediaBatchCreateInput!): MediaBatchCreatePayload!
+}
+link

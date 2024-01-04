@@ -1,0 +1,1456 @@
+type Query {
+# Get single account data.
+#
+# Required permission: Account:read
+#
+# Store restrictions apply.
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+account(id: Int, externalId: String): Account
+# Get collection of accounts.
+#
+# Required permission: Account:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+accounts(where: AccountFilter, sort: [AccountSort!] = [id_ASC], limit: Int = 20, page: Int = 1): [Account!]!
+# Get accounts connection
+#
+# Required permission: Account:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# first: (self-explanatory)
+# after: (self-explanatory)
+# last: (self-explanatory)
+# before: (self-explanatory)
+accountConnection(where: AccountFilter, sort: [AccountSort!] = [id_ASC], first: Int, after: String, last: Int, before: String): AccountConnection!
+# Get single admin user
+#
+# Required permission: AdminUser:read
+#
+# Arguments
+# id: (self-explanatory)
+adminUser(id: Int): AdminUser
+# Get collection of admin users
+#
+# Required permission: AdminUser:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+adminUsers(where: AdminUserFilter, sort: [AdminUserSort!] = [id_ASC], limit: Int = 20, page: Int = 1): [AdminUser!]!
+# Get single affiliate data
+#
+# Required permission: Affiliate:read
+#
+# Store restrictions apply.
+#
+# Arguments
+# id: (self-explanatory)
+affiliate(id: Int!): Affiliate
+# Get collection of affiliates
+#
+# Required permission: Affiliate:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+affiliates(where: AffiliateFilter, sort: [AffiliateSort!] = [id_ASC], limit: Int = 20, page: Int = 1): [Affiliate!]!
+# Get collection of allocation rules
+#
+# Required permission: AllocationRule:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+allocationRules(where: AllocationRuleFilter = {isActive: true}, sort: [AllocationRuleSort!] = [id_ASC], limit: Int = 20, page: Int): [AllocationRule!]!
+# Get all defined attribute types
+#
+# Required permission: Attribute:read
+#
+# All elements are always returned
+#
+# Arguments
+# where: (self-explanatory)
+attributeTypes(where: AttributeTypeFilter): [AttributeType!]!
+# Get single brand data
+#
+# Required permission: Brand:read
+#
+# Store restrictions apply.
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+brand(id: Int, externalId: String): Brand
+# Get collection of brands
+#
+# Required permission: Brand:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+brands(where: BrandFilter, sort: [BrandSort!] = [id_ASC], limit: Int = 20, page: Int = 1): [Brand!]!
+# Get collection of brick and mortars
+#
+# Required permission: BrickAndMortar:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+brickAndMortars(where: BrickAndMortarFilter, sort: [BrickAndMortarSort!] = [id_ASC], limit: Int = 20, page: Int = 1): [BrickAndMortar!]!
+# Get single bundle data
+#
+# Required permission: Bundle:read
+#
+# Arguments
+# id: (self-explanatory)
+bundle(id: Int!): Bundle
+# Get collection of bundles
+#
+# Required permission: Bundle:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+bundles(where: BundleFilter, sort: [BundleSort!] = [id_ASC], limit: Int = 20, page: Int = 1): [Bundle!]!
+# Get collection of bundles in the Relay connection form
+#
+# Required permission: Bundle:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# first: (self-explanatory)
+# after: (self-explanatory)
+# last: (self-explanatory)
+# before: (self-explanatory)
+bundleConnection(where: BundleFilter, sort: [BundleSort!] = [id_ASC], first: Int, after: String, last: Int, before: String): BundleConnection!
+# Required permission: TaxRule:read
+#
+# Requires field selected: userErrors
+#
+# Arguments
+# input: (self-explanatory)
+calculateTaxes(input: OrderTaxesInput!): OrderTaxesPayload!
+# Get campaigns
+#
+# Required permission: Campaign:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+campaigns(where: CampaignFilter, sort: [CampaignSort!] = [id_DESC], limit: Int = 20, page: Int = 1): [Campaign!]!
+# Get collection of campaigns in the Relay connection form
+#
+# Required permission: Campaign:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# first: (self-explanatory)
+# after: (self-explanatory)
+# last: (self-explanatory)
+# before: (self-explanatory)
+campaignConnection(
+where: CampaignFilter,
+sort: [CampaignSort!] = [id_DESC],
+first: Int,
+after: String,
+last: Int,
+before: String
+): CampaignConnection!
+# Get categories
+#
+# Required permission: Category:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+categories(where: CategoryFilter, sort: [CategorySort!] = [customOrder_ASC], limit: Int = 20, page: Int = 1): [Category!]!
+# Get single collection data
+#
+# Required permission: Collection:read
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+collection(id: Int, externalId: String): Collection
+# Get list of collections by any criteria
+#
+# Required permission: Collection:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+collections(where: CollectionFilter, sort: [CollectionSort!] = [id_ASC], limit: Int = 20, page: Int = 1): [Collection!]!
+# Get list of collections in the Relay connection form
+#
+# Required permission: Collection:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# first: (self-explanatory)
+# after: (self-explanatory)
+# last: (self-explanatory)
+# before: (self-explanatory)
+collectionConnection(
+where: CollectionFilter,
+sort: [CollectionSort!] = [id_ASC],
+first: Int,
+after: String,
+last: Int,
+before: String
+): CollectionConnection!
+# Get continents to group countries
+#
+# Required permission: Country:read
+#
+# Limit is optional
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+continents(where: ContinentFilter, sort: [ContinentSort!] = [name_ASC], limit: Int, page: Int): [Continent!]!
+# Get collection of countries by any criteria
+#
+# Required permission: Country:read
+#
+# Limit is optional
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+countries(where: CountryFilter, sort: [CountrySort!] = [name_ASC], limit: Int, page: Int): [Country!]!
+# Get single currency data
+#
+# Required permission: Currency:read
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+currency(id: Int, externalId: String): Currency
+# Get collection of currencies by any criteria
+#
+# Required permission: Currency:read
+#
+# Limit is optional
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+currencies(where: CurrencyFilter, sort: [CurrencySort!] = [id_ASC], limit: Int, page: Int): [Currency!]!
+# Get single customer data
+#
+# Required permission: Customer:read
+#
+# Store restrictions apply.
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+customer(id: Int, externalId: String): Customer
+# Get collection of customers by any criteria
+#
+# Required permission: Customer:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+customers(where: CustomerFilter, sort: [CustomerSort!] = [id_ASC], limit: Int = 20, page: Int = 1): [Customer!]!
+# Get collection of customers in the Relay connection form
+#
+# Required permission: Customer:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# first: (self-explanatory)
+# after: (self-explanatory)
+# last: (self-explanatory)
+# before: (self-explanatory)
+customerConnection(
+where: CustomerFilter,
+sort: [CustomerSort!] = [id_ASC],
+first: Int,
+after: String,
+last: Int,
+before: String
+): CustomerConnection!
+# Get single delivery window data
+#
+# Required permission: DeliveryWindow:read
+#
+# Store restrictions apply.
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+deliveryWindow(id: Int, externalId: String): DeliveryWindow
+# Get delivery windows by any criteria
+#
+# Required permission: DeliveryWindow:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+deliveryWindows(where: DeliveryWindowFilter, sort: [DeliveryWindowSort!] = [id_ASC], limit: Int = 20, page: Int = 1): [DeliveryWindow!]!
+# Get single voucher data
+#
+# Required permission: Voucher:read
+#
+# Store restrictions apply.
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+voucher(id: Int, externalId: String): Voucher
+# Get collection of vouchers
+#
+# Required permission: Voucher:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+vouchers(where: VoucherFilter, sort: [VoucherSort!] = [priority_ASC, id_ASC], limit: Int = 20, page: Int = 1): [Voucher!]!
+# Get single display data
+#
+# Required permission: Display:read
+#
+# Store restrictions apply.
+#
+# Arguments
+# id: (self-explanatory)
+display(id: Int!): Display
+# Get collection of displays by any criteria
+#
+# Required permission: Display:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+displays(where: DisplayFilter, sort: [DisplaySort!] = [id_ASC], limit: Int = 20, page: Int = 1): [Display!]!
+# Get collection of display items by any criteria
+#
+# Required permission: Display:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+displayItems(where: DisplayItemFilter, sort: [DisplayItemSort!] = [customOrder_ASC], limit: Int = 20, page: Int = 1): [DisplayItem!]!
+# Get collection of displays in the Relay connection form
+#
+# Required permission: Display:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# first: (self-explanatory)
+# after: (self-explanatory)
+# last: (self-explanatory)
+# before: (self-explanatory)
+displayConnection(where: DisplayFilter, sort: [DisplaySort!] = [id_ASC], first: Int, after: String, last: Int, before: String): DisplayConnection!
+# Get a list of document templates
+#
+# Required permission: DocumentTemplate:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+documentTemplates(where: DocumentTemplateFilter, sort: [DocumentTemplateSort!] = [id_DESC], limit: Int = 20, page: Int = 1): [DocumentTemplate!]!
+# Required permission: Folder:read
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+folder(id: Int, externalId: String): Folder
+# Get folders
+#
+# Required permission: Folder:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+folders(where: FolderFilter, sort: [FolderSort!] = [customOrder_ASC], limit: Int = 20, page: Int = 1): [Folder!]!
+# Get Gift Certificate Generators
+#
+# Required permission: GiftCertificateGenerator:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+giftCertificateGenerators(
+where: GiftCertificateGeneratorFilter,
+sort: [GiftCertificateGeneratorSort!] = [id_ASC],
+limit: Int = 20,
+page: Int = 1
+): [GiftCertificateGenerator!]!
+# Get all users for which tokens were generated
+#
+# Required permission: admin
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+graphQLAccess(where: GraphQLAccessFilter, sort: [GraphQLAccessSort!] = [id_DESC], limit: Int = 20, page: Int = 1): [GraphQLAccess!]!
+# Get all integration names so that one can select it instead of typing
+#
+# Required permission: admin
+#
+# All elements are always returned
+integrationNames: [String!]!
+# Get all ID conversion table entries
+#
+# Required permission: IdConversion:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+idConversions(where: IdConversionEntryFilter, sort: [IdConversionEntrySort!] = [id_ASC], limit: Int = 20, page: Int = 1): [IdConversionEntry!]!
+# Get single invoice data
+#
+# Required permission: Invoice:read
+#
+# Store restrictions apply.
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+invoice(id: Int, externalId: String): Invoice
+# Get all invoices
+#
+# Required permission: Invoice:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+invoices(where: InvoiceFilter, sort: [InvoiceSort!] = [number_DESC, id_ASC], limit: Int = 20, page: Int = 1): [Invoice!]!
+# Get collection of invoices in the Relay connection form
+#
+# Required permission: Invoice:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# first: (self-explanatory)
+# after: (self-explanatory)
+# last: (self-explanatory)
+# before: (self-explanatory)
+invoiceConnection(where: InvoiceFilter, sort: [InvoiceSort!] = [number_DESC, id_ASC], first: Int, after: String, last: Int, before: String): InvoiceConnection!
+# Get invoice payments
+#
+# Required permission: Invoice:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+invoicePayments(where: InvoicePaymentFilter, sort: [InvoicePaymentSort!] = [id_ASC], limit: Int = 20, page: Int = 1): [InvoicePayment!]!
+# Get all known languages
+#
+# Required permission: Language:read
+#
+# Limit is optional
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+languages(where: LanguageFilter, sort: [LanguageSort!] = [code_ASC, id_ASC], limit: Int, page: Int): [Language!]!
+# List translatable fields for each object type.
+# Includes dynamic attributes along their objects, and mapped ones under MappedAttribute type.
+#
+# Required permission: Translation:read
+#
+# All elements are always returned
+#
+# Arguments
+# where: (self-explanatory)
+translatableFields(where: TranslatableFieldsFilter): [TranslatableObjectFields!]!
+# Get a list of mapped (non-dynamic) attributes
+#
+# Required permission: Attribute:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+mappedAttributes(where: MappedAttributeFilter, sort: [MappedAttributeSort!] = [id_ASC], limit: Int = 20, page: Int = 1): [MappedAttribute!]!
+# Get single market data
+#
+# Required permission: Market:read
+#
+# Store restrictions apply.
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+market(id: Int, externalId: String): Market
+# Get all markets
+#
+# Required permission: Market:read
+#
+# Limit is optional
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+markets(where: MarketFilter, sort: [MarketSort!] = [id_ASC], limit: Int, page: Int): [Market!]!
+# Get single measurementChart
+#
+# Required permission: MeasurementChart:read
+#
+# Arguments
+# id: (self-explanatory)
+measurementChart(id: Int!): MeasurementChart
+# Get all measurementCharts
+#
+# Required permission: MeasurementChart:read
+#
+# Limit is optional
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+measurementCharts(where: MeasurementChartFilter, sort: [MeasurementChartSort!] = [id_ASC], limit: Int, page: Int): [MeasurementChart!]!
+# Get all media sizes available for ProductMedia
+#
+# Required permission: none
+#
+# All elements are always returned
+mediaSizes: [MediaSize!]!
+# Get all newsletter subscriptions
+#
+# Required permission: NewsletterSubscription:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+newsletterSubscriptions(
+where: NewsletterSubscriptionFilter,
+sort: [NewsletterSubscriptionSort!] = [id_ASC],
+limit: Int = 20,
+page: Int = 1
+): [NewsletterSubscription!]!
+# Get single order data
+#
+# Required permission: Order:read
+#
+# Store restrictions apply.
+#
+# Arguments
+# id: (self-explanatory)
+# number: (self-explanatory)
+# externalId: (self-explanatory)
+order(id: String, number: Int, externalId: String): Order
+# Get all orders
+#
+# Required permission: Order:read
+#
+# Limit must be in range 1 - 100
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+orders(where: OrderFilter, sort: [OrderSort!] = [number_DESC], limit: Int = 20, page: Int = 1): [Order!]!
+# Get collection of orders in the Relay connection form
+#
+# Required permission: Order:read
+#
+# Limit must be in range 1 - 100
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# first: (self-explanatory)
+# after: (self-explanatory)
+# last: (self-explanatory)
+# before: (self-explanatory)
+orderConnection(where: OrderFilter, sort: [OrderSort!] = [number_DESC], first: Int, after: String, last: Int, before: String): OrderConnection!
+# Get all permission names
+#
+# Required permission: admin
+#
+# All elements are always returned
+permissionNames: [String!]!
+# Get payment history
+#
+# Required permission: PaymentHistory:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+orderPaymentHistory(
+where: PaymentHistoryEntryFilter,
+sort: [PaymentHistoryEntrySort!] = [id_DESC],
+limit: Int = 20,
+page: Int = 1
+): [PaymentHistoryEntry!]!
+# Get payment terms
+#
+# Required permission: PaymentTerms:read
+#
+# Limit is optional
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+paymentTerms(where: PaymentTermsFilter, sort: [PaymentTermsSort!] = [id_ASC], limit: Int, page: Int): [PaymentTerms!]!
+# Get single pricelist data
+#
+# Required permission: Pricelist:read
+#
+# Store restrictions apply.
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+pricelist(id: Int, externalId: String): Pricelist
+# Get collection of pricelists by any criteria
+#
+# Required permission: Pricelist:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+pricelists(where: PricelistFilter, sort: [PricelistSort!] = [id_ASC], limit: Int = 20, page: Int = 1): [Pricelist!]!
+# Get single price alteration data
+#
+# Required permission: Price:read
+#
+# Store restrictions apply.
+#
+# Arguments
+# id: (self-explanatory)
+priceAlteration(id: Int!): PriceAlteration
+# Get price alterations
+#
+# Required permission: Price:read
+#
+# All elements are always returned
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+priceAlterations(where: PriceAlterationFilter, sort: [PriceAlterationSort!]): [PriceAlteration!]!
+# Get single product data
+#
+# Required permission: Product:read
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+product(id: Int, externalId: String): Product
+# Get collection of products by any criteria
+#
+# Required permission: Product:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+products(where: ProductFilter, sort: [ProductSort!] = [id_ASC], limit: Int = 20, page: Int = 1): [Product!]!
+# Get collection of products in the Relay connection form
+#
+# Required permission: Product:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# first: (self-explanatory)
+# after: (self-explanatory)
+# last: (self-explanatory)
+# before: (self-explanatory)
+productConnection(where: ProductFilter, sort: [ProductSort!] = [id_ASC], first: Int, after: String, last: Int, before: String): ProductConnection!
+# Get collection of product sizes by any criteria
+#
+# Required permission: ProductSize:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+productSizes(where: ProductSizeFilter, sort: [ProductSizeSort!] = [id_ASC], limit: Int = 20, page: Int = 1): [ProductSize!]!
+# Get collection of product sizes in the Relay connection form
+#
+# Required permission: ProductSize:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# first: (self-explanatory)
+# after: (self-explanatory)
+# last: (self-explanatory)
+# before: (self-explanatory)
+productSizeConnection(
+where: ProductSizeFilter,
+sort: [ProductSizeSort!] = [id_ASC],
+first: Int,
+after: String,
+last: Int,
+before: String
+): ProductSizeConnection!
+# Get single product variant data
+#
+# Required permission: ProductVariant:read
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+productVariant(id: Int, externalId: String): ProductVariant
+# Get collection of product variants by any criteria
+#
+# Required permission: ProductVariant:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+productVariants(where: ProductVariantFilter, sort: [ProductVariantSort!] = [id_ASC], limit: Int = 20, page: Int = 1): [ProductVariant!]!
+# Get collection of product variants in the Relay connection form
+#
+# Required permission: ProductVariant:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# first: (self-explanatory)
+# after: (self-explanatory)
+# last: (self-explanatory)
+# before: (self-explanatory)
+productVariantConnection(
+where: ProductVariantFilter,
+sort: [ProductVariantSort!] = [id_ASC],
+first: Int,
+after: String,
+last: Int,
+before: String
+): ProductVariantConnection!
+# Get single return data
+#
+# Required permission: Return:read
+#
+# Store restrictions apply.
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+return(id: Int, externalId: String): Return
+# Get collection of returns by any criteria
+#
+# Required permission: Return:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+returns(where: ReturnFilter, sort: [ReturnSort!] = [id_ASC], limit: Int = 20, page: Int = 1): [Return!]!
+# Get collection of returns in the Relay connection form
+#
+# Required permission: Return:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# first: (self-explanatory)
+# after: (self-explanatory)
+# last: (self-explanatory)
+# before: (self-explanatory)
+returnConnection(where: ReturnFilter, sort: [ReturnSort!] = [id_ASC], first: Int, after: String, last: Int, before: String): ReturnConnection!
+# Get single sales representative
+#
+# Required permission: SalesRepresentative:read
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+salesRepresentative(id: Int, externalId: String): SalesRepresentative
+# Get collection of sales representatives
+#
+# Required permission: SalesRepresentative:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+salesRepresentatives(
+where: SalesRepresentativeFilter,
+sort: [SalesRepresentativeSort!] = [id_ASC],
+limit: Int = 20,
+page: Int = 1
+): [SalesRepresentative!]!
+# Get single shipment data
+#
+# Required permission: Shipment:read
+#
+# Store restrictions apply.
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+shipment(id: Int, externalId: String): Shipment
+# Get collection of shipments by any criteria
+#
+# Required permission: Shipment:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+shipments(where: ShipmentFilter, sort: [ShipmentSort!] = [id_DESC], limit: Int = 20, page: Int = 1): [Shipment!]!
+# Get collection of shipments in Relay connection form
+#
+# Required permission: Shipment:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# first: (self-explanatory)
+# after: (self-explanatory)
+# last: (self-explanatory)
+# before: (self-explanatory)
+shipmentConnection(
+where: ShipmentFilter,
+sort: [ShipmentSort!] = [id_DESC],
+first: Int,
+after: String,
+last: Int,
+before: String
+): ShipmentConnection!
+# Get shipping options
+#
+# Required permission: ShippingOption:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+shippingOptions(where: ShippingOptionFilter, sort: [ShippingOptionSort!] = [name_ASC, id_ASC], limit: Int = 20, page: Int = 1): [ShippingOption!]!
+# Get shipping terms
+#
+# Required permission: ShippingTerms:read
+#
+# Limit is optional
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+shippingTerms(where: ShippingTermsFilter, sort: [ShippingTermsSort!] = [id_ASC], limit: Int, page: Int): [ShippingTerms!]!
+# Get single size chart
+#
+# Required permission: SizeChart:read
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+sizeChart(id: Int, externalId: String): SizeChart
+# Get collection of size charts by any criteria
+#
+# Required permission: SizeChart:read
+#
+# Limit is optional
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+sizeCharts(where: SizeChartFilter, sort: [SizeChartSort!] = [id_ASC], limit: Int, page: Int): [SizeChart!]!
+# Get single size localization
+#
+# Required permission: SizeChart:read
+#
+# Arguments
+# id: (self-explanatory)
+sizeLocalization(id: Int!): SizeLocalization
+# Get collection of size localizations by any criteria
+#
+# Required permission: SizeChart:read
+#
+# Limit is optional
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+sizeLocalizations(where: SizeLocalizationFilter, sort: [SizeLocalizationSort!] = [id_ASC], limit: Int, page: Int): [SizeLocalization!]!
+# Get single store data
+#
+# Required permission: Store:read
+#
+# Store restrictions apply.
+#
+# Arguments
+# id: (self-explanatory)
+store(id: Int!): Store
+# Get collection of stores by any criteria
+#
+# Required permission: Store:read
+#
+# Limit is optional
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+stores(where: StoreFilter, sort: [StoreSort!] = [id_ASC], limit: Int, page: Int): [Store!]!
+# Get collection of store plugins by any criteria
+#
+# Required permission: StorePlugin:read
+#
+# Limit is optional
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+storePlugins(where: StorePluginFilter, sort: [StorePluginSort!] = [id_ASC], limit: Int, page: Int): [StorePlugin!]!
+# Get collection of subscription plans by any criteria
+#
+# Required permission: SubscriptionPlan:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+subscriptionPlans(where: SubscriptionPlanFilter, sort: [SubscriptionPlanSort!] = [naturalSort_ASC, id_ASC], limit: Int = 20, page: Int = 1): [SubscriptionPlan!]!
+# Get defined tax classes
+#
+# Required permission: TaxClass:read
+#
+# Limit is optional
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+taxClasses(where: TaxClassFilter, sort: [TaxClassSort!] = [id_ASC], limit: Int, page: Int): [TaxClass!]!
+# Get defined tax groups
+#
+# Required permission: TaxRule:read
+#
+# Limit is optional
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+taxGroups(where: TaxGroupFilter, sort: [TaxGroupSort!] = [id_ASC], limit: Int, page: Int): [TaxGroup!]!
+# Get defined tax rules
+#
+# Required permission: TaxRule:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+taxRules(where: TaxRuleFilter, sort: [TaxRuleSort!] = [id_ASC], limit: Int = 20, page: Int = 1): [TaxRule!]!
+# Get data of currently authenticated user
+#
+# Required permission: none
+viewer: GraphQLUser!
+# Get single warehouse
+#
+# Required permission: Warehouse:read
+#
+# Arguments
+# id: (self-explanatory)
+# externalId: (self-explanatory)
+warehouse(id: Int, externalId: String): Warehouse
+# Get collection of warehouses
+#
+# Required permission: Warehouse:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+warehouses(where: WarehouseFilter, sort: [WarehouseSort!] = [customSort_ASC, id_ASC], limit: Int = 20, page: Int = 1): [Warehouse!]!
+# Get collection of warehouse deliveries in Relay connection form
+#
+# Required permission: StockChange:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# first: (self-explanatory)
+# after: (self-explanatory)
+# last: (self-explanatory)
+# before: (self-explanatory)
+stockChangeConnection(
+where: StockChangeFilter,
+sort: [StockChangeSort!] = [id_DESC],
+first: Int,
+after: String,
+last: Int,
+before: String
+): StockChangeConnection!
+# Get collection of stock change lines
+#
+# Required permission: StockChange:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+stockChangeLines(where: StockChangeLineFilter, sort: [StockChangeLineSort!] = [id_ASC], limit: Int = 20, page: Int = 1): [StockChangeLine!]!
+# Required permission: StockChange:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# first: (self-explanatory)
+# after: (self-explanatory)
+# last: (self-explanatory)
+# before: (self-explanatory)
+stockChangeLineConnection(
+where: StockChangeLineFilter,
+sort: [StockChangeLineSort!] = [id_ASC],
+first: Int,
+after: String,
+last: Int,
+before: String
+): StockChangeLineConnection!
+# Get a list of subscriptions
+#
+# Required permission: Subscription:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+subscriptions(where: SubscriptionFilter, sort: [SubscriptionSort!] = [id_DESC], limit: Int = 20, page: Int = 1): [Subscription!]!
+# Get a list of subscription contracts
+#
+# Required permission: Subscription:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+subscriptionContracts(
+where: SubscriptionContractFilter,
+sort: [SubscriptionContractSort!] = [id_DESC],
+limit: Int = 20,
+page: Int = 1
+): [SubscriptionContract!]!
+# Get available rate limits
+#
+# Required permission: none
+#
+# All elements are always returned
+#
+# Arguments
+# where: (self-explanatory)
+rateLimits(where: RateLimitFilter): [RateLimit!]!
+# Get the counter(s) for any object type
+#
+# Required permission: none
+counters: Counters!
+# Calculates how much discount the provided vouchers give to the provided selection
+#
+# Required permission: Voucher:read
+#
+# Arguments
+# input: (self-explanatory)
+calculateVouchers(input: CalculateVoucherInput!): CalculateVouchersPayload!
+# Get subvouchers
+#
+# Required permission: Voucher:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+subvouchers(where: SubvoucherFilter, sort: [SubvoucherSort!] = [id_ASC], limit: Int = 20, page: Int = 1): [Subvoucher!]!
+# Get a list of purchase orders
+#
+# Required permission: PurchaseOrder:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+purchaseOrders(where: PurchaseOrderFilter, sort: [PurchaseOrderSort!] = [id_DESC], limit: Int = 20, page: Int = 1): [PurchaseOrder!]!
+# Get collection of purchase orders in the Relay connection form
+#
+# Required permission: PurchaseOrder:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# first: (self-explanatory)
+# after: (self-explanatory)
+# last: (self-explanatory)
+# before: (self-explanatory)
+purchaseOrderConnection(
+where: PurchaseOrderFilter,
+sort: [PurchaseOrderSort!] = [id_DESC],
+first: Int,
+after: String,
+last: Int,
+before: String
+): PurchaseOrderConnection!
+# Get a list of purchase order deliveries
+#
+# Required permission: PurchaseOrderDelivery:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+purchaseOrderDeliveries(
+where: PurchaseOrderDeliveryFilter,
+sort: [PurchaseOrderDeliverySort!] = [id_DESC],
+limit: Int = 20,
+page: Int = 1
+): [PurchaseOrderDelivery!]!
+# Get collection of purchase order deliveries in the Relay connection form
+#
+# Required permission: PurchaseOrderDelivery:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# first: (self-explanatory)
+# after: (self-explanatory)
+# last: (self-explanatory)
+# before: (self-explanatory)
+purchaseOrderDeliveryConnection(
+where: PurchaseOrderDeliveryFilter,
+sort: [PurchaseOrderDeliverySort!] = [id_DESC],
+first: Int,
+after: String,
+last: Int,
+before: String
+): PurchaseOrderDeliveryConnection!
+# Get single supplier data by ID
+#
+# Required permission: Supplier:read
+#
+# Arguments
+# id: (self-explanatory)
+supplier(id: Int!): Supplier
+# Get a list of suppliers
+#
+# Required permission: Supplier:read
+#
+# Limit must be in range 1 - 200
+#
+# Arguments
+# where: (self-explanatory)
+# sort: (self-explanatory)
+# limit: (self-explanatory)
+# page: (self-explanatory)
+suppliers(where: SupplierFilter, sort: [SupplierSort!] = [name_ASC], limit: Int = 20, page: Int = 1): [Supplier!]!
+# Required permission: Event:read
+#
+# All elements are always returned
+#
+# Arguments
+# where: (self-explanatory)
+eventListeners(where: EventListenerFilter): [EventListener!]!
+# Get N oldest events.
+# After they are processed, they must be confirmed by calling the confirmEvents mutation.
+# Otherwise, the repetitive calls of the query will be returning the same events.
+# You can filter by object type and change type for all types of events, and additionally
+# filter by store and market for events that are related to them.
+#
+# Required permission: Event:read
+#
+# Limit must be in range 1 - 200
+#
+# Store restrictions apply.
+#
+# Arguments
+# where: (self-explanatory)
+# limit: (self-explanatory)
+events(where: EventFilter, limit: Int! = 20): [Event!]!
+# Required permission: MediaBatch:read
+#
+# Arguments
+# queueId: (self-explanatory)
+mediaBatch(queueId: String!): MediaBatch
+}
