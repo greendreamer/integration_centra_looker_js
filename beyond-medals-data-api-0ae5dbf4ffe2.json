@@ -1,13 +1,13 @@
 {
   "type": "service_account",
-  "project_id": "beyond-medals-data-api",
-  "private_key_id": "0ae5dbf4ffe201682e41d2fed5926b1c1bb5252f",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCwjNsuz+Fzykpv\nFWDbN8BvHIYDQq1G3/5U6I5Q4uJ8ylkJow0EIFBT8KY5Wu6YS/s74aXDypu7munk\n2C0IEZL82YqV5Xdp0QgOkzN0pLoeL5xS+3gsqsRov6FTa3cGxzrQlaJoun0iK8dm\nRZDLbsfI4s1wToX19T3+f/toEVV7ZT46CwChkEGsB3uwifoli0rXZ0gza6Ob2nTn\nKWirDz7EBAPVi5uBwDCF7Ahcg/3vQEyqLWhxFNCW2zGGc3DjI6RsVIlEccwcFGds\n7uyeub5wEyFzgZddnflGGO8ymlUXbujtQlAyggfNYFB3k5E6RdT1jpgyxrvhlWXG\nXf4Ea8MVAgMBAAECggEABSoJm0PvZ1CqfrdUXvUxhs6ByQShRup0aQ1oZEtOrrHI\nivSfA9jiIKJwaksToZbPYYAHNkPt7D3qy4vbPVouP4EpgZr1tD2uC6cYoTfUTd+8\npdy/NidEmX/Je0Qwdh1LxiAqYP/bey1mpsIwKxMxetnPgpJ5bqlex9v8gZ3IL1TJ\nVNIwo/AU95tzMGua/3sCYUClyqvB0b484hhx5bZq1EK2G82prz3UUpslpav/zEkc\neXUbIgZwJ8INLU4APs8r9ZahKKANF6/COQE5LACN6TxU3xUXZH2yEJXTKYsYl0I3\nX+M2cHjdh3cxRsqy1gn2NzoEJ7cm0DAAmSTKTG3RoQKBgQDllYrVmf5zRd4/ddd1\nfqDWeONRyMSxTyk+GqhV2lcvgqsvqxH3XnW3Xgs/2oS8pT9q5QtK8FgRvY4Gh0P6\n8yfgL+ysOyt8Kytj/pPZBg4j6HloOcNCbRtF4KCOdBPBPKUIiT6OTB7ODPClfgMO\nhESN/1POJ/T8+LeN4JdxSQ6UfQKBgQDE3S+21LomC0v7vu5sM806PlQD3J+rdJ0Z\nYAY3QFFtT9S02S25YkEMy4muFzXxyyaSoyLWcOcwEPX5RYnLkC2bzgV6DC8/SIib\ns1ZhBUbKf9KZHsXhWQ/p+kAwwOUbfGZvzQinol/A2h0KMUE8gL+sj+fPBOcKt1jd\nOECufR4keQKBgGa5vuFMgjn57TPf+oQsILNWbABQIRJlJUMQknm3tIMhqI8vsF5K\n+ckOX2I22GXAWtvtmFvzprRpaH8rTxOecR0y1GdMImzws/2OD4Fv4CvY/VnRXrj+\nMNHXbH/RGHXCOOXU4xSwoqf3ykWCWMPKExKmSE1aO5hlgVwOPjUGR2vRAoGAZhPC\nr+yx8RQefBTOj/B0U+UJr07ww/idlRDDaFbDYgjo5DVQjjWyQS4w38JNSGjsQVCx\nubulRLkmsfAquRCzdXxoPpae0RONMh7VhU01Hb8VtivMs0J5C/uk2SLMKWphu0r3\nV+TL/bWbJTPQ/cxMlu+vZRrHqjjTrTGD6HYb8RECgYEAjk1awBV3LYPVhyDn9/8b\nsErXgyrzckk+nfuzXfcBNXBnCyW9gcyXahjGCF4fTHm5YLPC3KsbJgz+/f5kvS5Z\nJwelVM4542y9HeEiqjZQRS/SKKoCRj8ptXHek18Aw+3SqDKvG2ThEAjOm+EokqpB\n6Xr33+6dDi7Kl/6OvZuWvUk=\n-----END PRIVATE KEY-----\n",
-  "client_email": "green-904@beyond-medals-data-api.iam.gserviceaccount.com",
-  "client_id": "103598728029580744691",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/green-904%40beyond-medals-data-api.iam.gserviceaccount.com",
-  "universe_domain": "googleapis.com"
+  "project_id": "",
+  "private_key_id": "",
+  "private_key": "",
+  "client_email": "",
+  "client_id": "",
+  "auth_uri": "",
+  "token_uri": "",
+  "auth_provider_x509_cert_url": "",
+  "client_x509_cert_url": "",
+  "universe_domain": ""
 }
